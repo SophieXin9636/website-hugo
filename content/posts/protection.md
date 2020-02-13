@@ -1,7 +1,9 @@
 ---
 title: ELF 五種保護機制
 date: 2020-02-13T00:10:46+08:00
-draft: true
+draft: false
+tags: ["CTF", "pwn"]
+categories: ["CTF pwn"]
 ---
 
 # ELF 五種保護機制

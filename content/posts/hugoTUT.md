@@ -2,6 +2,8 @@
 title: "Hugo Tutorial"
 date: 2020-02-13T17:14:09+08:00
 draft: false
+tags: ["hugo", "website"]
+categories: ["note"]
 ---
 
 # Hugo Tutorial
