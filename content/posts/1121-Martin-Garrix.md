@@ -6,6 +6,8 @@ tags: ["Music"]
 categories: ["Music"]
 ---
 
+<img src="../../../img/Martin-bg.jpg">
+
 A famous DJ in Netherlands. <br>
 
 

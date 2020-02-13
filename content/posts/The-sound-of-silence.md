@@ -10,7 +10,7 @@ Hello darkness, my old friend.
 
 <h1 id="the-sound-of-silence">The Sound Of Silence</h1>
 
-<img src="../img/The-sound-of-silence-bg.jpg">
+<img src="../../../img/The-sound-of-silence-bg.jpg">
 <p>
     <code>Hello darkness, my old friend, this is lyrics.</code>
 </p>

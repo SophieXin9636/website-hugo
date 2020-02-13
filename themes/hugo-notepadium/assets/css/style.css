@@ -101,7 +101,7 @@ pre {
   display: block;
   line-height: 1.45;
   text-align: left;
-  font-size: 12px;
+  font-size: 16px;
   margin: 0;
   padding: 6px 16px;
   background-color: #f9fafa;
@@ -153,6 +153,7 @@ a {
 
 a:hover {
   text-decoration: underline;
+  color: #F19483;
 }
 
 del {
@@ -253,7 +254,7 @@ acronym {
 }
 
 .site.slogan {
-  font-size: 15px;
+  font-size: 26px;
   line-height: 1.5;
   text-align: center;
   margin-top: 20px;
@@ -262,13 +263,13 @@ acronym {
 .site.slogan .title {
   display: inline-block;
   text-align: initial;
-  color: #4a5560;
+  color: #F19483;
   min-height: 22px;
 }
 
 .nav.item {
   display: inline-block;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1;
   padding: 4px 6px;
   margin: 5px 5px 5px 0;
@@ -316,6 +317,7 @@ acronym {
 .note.list .item>a:hover,
 .nav.item:hover {
   opacity: .5;
+  color: #F19483;
   text-decoration: none;
 }
 
@@ -337,7 +339,7 @@ acronym {
 
 .note.title,
 .site.name {
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 700;
 }
 

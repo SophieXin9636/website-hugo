@@ -36,7 +36,7 @@ enable = false  # optional: true, false. Enable globally, default: false. You ca
 use = "katex"  # option: "katex", "mathjax". default: "katex"
 
 [params.syntax]
-use = "hljs"  # builtin: "prismjs", "hljs". "none" means Chroma
+use = "none"  # builtin: "prismjs", "hljs". "none" means Chroma
 theme = "dracula"
 darkTheme = "xcode-dark"  # apply this theme in dark mode
 
