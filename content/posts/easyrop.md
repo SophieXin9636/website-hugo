@@ -26,7 +26,7 @@ rop: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked
 
 ## 線索1：statically linked
 
-**動態連結**是當程式執行時，才會去 library binding (.so 或 .dll)
+**動態連結**是當程式執行時，才會去 library binding (.so 或 .dll) <br>
 **靜態連結**是指程式在連結階段時，就會將使用到的函式一併放入執行檔
 
 | 比較         | 動態連結     | 靜態連結     |
@@ -58,7 +58,8 @@ ROPgadget --binary rop | grep "正規表達式"
 
 ### 如何找 data section 位址？
 使用 `readelf -S filename` 指令可查看所有 section 的位址
-我們只需看 data section的部份即可
+我們只需看 data section的部份即可 <br>
+
 data區段雖然在此程式無法執行，但可寫入 `"/bin/sh"`字串作為納入 shell 參數的暫存區塊
 ```
 readelf -S rop
@@ -81,7 +82,7 @@ readelf -S rop | grep ".data"
 
 
 另外必須要注意，輸入字串後仍會檢查字串長度是否小於等於 32 個，
-必須在輸入30個bytes大小的字串後，額外加入 空字元，繞過strlen的超過長度的判斷，才繼續接 ROP chain
+必須在輸入30個bytes大小的字串後，額外加入 空字元，繞過strlen()的超過長度的判斷，才繼續接 ROP chain
 
 ![](https://i.imgur.com/mOn49l6.png)
 
@@ -105,7 +106,7 @@ rsi: 第二個參數存放的暫存器
 rdx: 第三個參數存放的暫存器
 :::
 
-舉例來說，呼叫 execve("/bin/sh", 0, 0) <br>
+舉例來說，呼叫 `execve("/bin/sh", 0, 0)` <br>
 暫存器會呈現
 ```
 rax = 0x3b (system call 的編號)
