@@ -2,7 +2,7 @@
 title: "Hugo Tutorial"
 date: 2020-02-13T17:14:09+08:00
 draft: false
-tags: ["hugo", "website"]
+tags: ["hugo", "website", "git"]
 categories: ["note"]
 ---
 
@@ -142,7 +142,25 @@ git remote add origin https://github.com/<your-account>/hugo-website.git
 git push -u origin master
 ```
 
+## 補充
 
+若不小心使用git指令把檔案玩壞掉時
+可以重新git clone下來
+但必須先將本地端的檔案刪乾淨 (該備份的備份)
+
+以我的為例
+```
+git clone https://github.com/SophieXin9636/website-hugo.git 
+cd website-hugo
+rm -rf public
+git clone https://github.com/SophieXin9636/SophieXin9636.github.io.git
+mv SophieXin9636.github.io public
+```
+
+則可以到 public 檢查 remote 連結是否為 github.io
+```
+git remote -v
+```
 
 
 最後選擇喜歡的編輯器撰寫markdown吧！
