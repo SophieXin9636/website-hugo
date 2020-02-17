@@ -100,11 +100,11 @@ ROP = Return Oriented Programming
 
 ### x64呼叫慣例
 
-:::info
+```
 rdi: 第一個參數存放的暫存器
 rsi: 第二個參數存放的暫存器
 rdx: 第三個參數存放的暫存器
-:::
+```
 
 舉例來說，呼叫 `execve("/bin/sh", 0, 0)` <br>
 暫存器會呈現
