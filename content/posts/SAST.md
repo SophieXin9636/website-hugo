@@ -22,19 +22,40 @@ categories: ["CTF pwn"]
 * Radare2：ELF
 * rabin2：ELF/PE/MZ
 
-### 副檔名及檔案格式
+### Object File
+以文件形式存放在磁碟（Disk）中的 object module
+有三種形式
+* Relocatable Object File
+	* 在編譯時期與其他  Relocatable Object File 合併起來，產生出一個 Executable Object File
+* Executable Object File
+	* 直接載入到主記憶體執行
+* Shared Object File
+	* 為 Relocatable Object File 的一種
+	* 可在執行時期動態連結並載入到主記憶體
+	* 也可在載入到記憶體時期，才動態連結此檔案
+
+
+Compiler 和 Assembler 可產生 Relocatable Object Files （包含 Shared Object File）<br>
+而 Linkers 可產生 executable Object Files <br>
+
+### 副檔名及 Object File 格式
+
+各個作業系統的 Object File 格式不盡相同， <br>
+像是 Windows 使用的是 PE 格式，而 Mac OS-X 使用的是 Mach-O 格式， <br>
+而 Linux 與 Unix 系統使用 ELF 格式 <br>
+上述格式統稱為 COFF 格式
 
 * 可執行檔格式
 * COFF (Common Object File Format)
 	* PE 格式 (Portable Executable)
 		* Executable (.exe)
 		* Object File
-		* shared object file (.dll)
+		* shared Object File (.dll)
 	* ELF 格式 (Executable Linkable Format)
 		* Relocatable (.o/.obj)
 		* Executable (`/bin/bash 文件`)
 		* Object File
-		* shared object file (.so)
+		* shared Object File (.so)
 
 ```
 Windows: PE  （.exe)
@@ -61,14 +82,21 @@ Linux  : .a
 由於此款軟體需要付費，在此不多做介紹
 
 ## Objdump
-顯示 object file 資訊
+顯示 Object File 資訊
 
 * -d： --disassemble 反組譯 （最常使用）
 ```
 objdump -d -M intel ./run
 ```
 * -f： 顯示檔頭，最有意義的資訊為 start address
-
+* -s： 顯示所有 section 對應的 binary & hexdump
+* -R： 顯示 dynamic relocation entries
+* -p： 顯示 program header table
+	* vaddr: virtual address
+	* paddr: process address
+	* filesz: segment size in object file 
+	* memsz: segment size in memory
+	* flags: run-time permissions
 
 ## readelf
 顯示 ELF file 資訊
@@ -103,3 +131,6 @@ Binary program info extractor <br>
 <img src="https://i.imgur.com/iwoQKaI.png" width=80%>
 
 * `rabin2 -e  binary`：顯示程式的 entrypoints (reverse 分析很方便！)
+
+## reference
+* Computer Systems. A Programmer’s Perspective 3e [7.3],[7.8]
