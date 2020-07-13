@@ -2,6 +2,8 @@
 title: "ASIS CTF 2020 pwn Full Protection Writeup"
 date: 2020-07-08T17:51:39+08:00
 draft: false
+categories: ["writeup"]
+tags: ["CTF", "pwn"]
 ---
 
 # ASIS CTF 2020 pwn Full Protection Writeup

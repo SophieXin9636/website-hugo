@@ -2,6 +2,8 @@
 title: "Format_string"
 date: 2020-07-06T18:44:25+08:00
 draft: true
+categories: ["CTF pwn"]
+tags: ["CTF", "pwn"]
 ---
 
 ## 什麼是 Format String (格式化字串) ?
