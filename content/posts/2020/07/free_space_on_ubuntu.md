@@ -12,7 +12,7 @@ tags: ["Linux", "Ubuntu", "disk management"]
 Low Disk space on "Filesystem root"
 The volume "Filesystem root" has only 856.0 MB disk space remaining.
 ```
-<img src="../../../img/free_space_on_ubuntu/free_space_01.JPG"><br>
+<img src="../../../../../img/free_space_on_ubuntu/free_space_01.JPG"><br>
 <br>
 使用 `bf` 指令可以查看 目前 file system disk space 的使用情況 <br>
 可以看到以下訊息，47 GB 大小的 `/dev/sda2` 使用率 99%
@@ -138,35 +138,35 @@ Gparted (GNOME Partition Editor) 為硬碟分割軟體，ubuntu 系統有內建�
 假如檔案系統還有其他的額外空間，便可使用此工具來做空間延伸。<br>
 
 目前的硬碟分割配置 <br>
-<img src="../../../img/free_space_on_ubuntu/free_space_02.JPG" width="80%"><br>
+<img src="../../../../../img/free_space_on_ubuntu/free_space_02.JPG" width="80%"><br>
 
 對 linux-swap 右鍵點選 Swapoff <br>
-<img src="../../../img/free_space_on_ubuntu/free_space_03.JPG" width="80%"><br>
+<img src="../../../../../img/free_space_on_ubuntu/free_space_03.JPG" width="80%"><br>
 
 對 linux-swap 右鍵點選 delete <br>
-<img src="../../../img/free_space_on_ubuntu/free_space_04.JPG" width="80%"><br>
+<img src="../../../../../img/free_space_on_ubuntu/free_space_04.JPG" width="80%"><br>
 
 在 /dev/sda2 (黃色區塊）右鍵點選 Resize/Move <br>
-<img src="../../../img/free_space_on_ubuntu/free_space_05.JPG" width="80%"><br>
+<img src="../../../../../img/free_space_on_ubuntu/free_space_05.JPG" width="80%"><br>
 
 在 New Size(MiB) 欄位輸入要改成多大的空間 <br>
 每個人系統能夠使用的空間不同，這裡僅供參考。 <br>
 在此以 76 GB 為例，也就是 `76*1024 = 77824` 建議所輸入的大小以 1024 MiB 為單位 <br>
 切記要預留空間給原先的 linux-swap 使用，個人會留 3~4 GB 的大小 <br>
 完成後點選 Resize <br>
-<img src="../../../img/free_space_on_ubuntu/free_space_06.JPG" width="70%"><br>
+<img src="../../../../../img/free_space_on_ubuntu/free_space_06.JPG" width="70%"><br>
 
 之後在 unallocated 點選右鍵 New 來新增分割配置 <br>
-<img src="../../../img/free_space_on_ubuntu/free_space_07.JPG" width="80%"><br>
+<img src="../../../../../img/free_space_on_ubuntu/free_space_07.JPG" width="80%"><br>
 
 預設會幫你填入剩下所要分配的空間大小 <br>
 切記 File System 選擇 linux-swap 在點選 add <br>
-<img src="../../../img/free_space_on_ubuntu/free_space_08.JPG" width="70%"><br>
+<img src="../../../../../img/free_space_on_ubuntu/free_space_08.JPG" width="70%"><br>
 
 查看下面的 information，確認是否前述步驟都有確實完成，<br>
 一旦分割不好容易發生不可復原的情況 <br>
 最後在點選上面的綠色勾勾(Apply All Opeation) 即可完成硬碟分割<br>
-<img src="../../../img/free_space_on_ubuntu/free_space_09.JPG" width="80%"><br>
+<img src="../../../../../img/free_space_on_ubuntu/free_space_09.JPG" width="80%"><br>
 
 ## Reference
 * [7 Simple Ways To Free Up Space On Ubuntu and Linux Mint](https://itsfoss.com/free-up-space-ubuntu-linux/)
